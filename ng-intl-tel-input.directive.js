@@ -3,6 +3,9 @@ angular.module('ngIntlTelInput')
     function (ngIntlTelInput, $log, $window, $parse) {
       return {
         restrict: 'A',
+        scope: {
+          countryDialCode: '=',
+        },
         require: 'ngModel',
         link: function (scope, elm, attr, ctrl) {
           // Warning for bad directive usage.
@@ -47,6 +50,7 @@ angular.module('ngIntlTelInput')
           };
           // Set model value to valid, formatted version.
           ctrl.$parsers.push(function (value) {
+            scope.countryDialCode = elm.intlTelInput('getSelectedCountryData').dialCode
             return elm.intlTelInput('getNumber');
           });
           // Set input value to model value and trigger evaluation.
