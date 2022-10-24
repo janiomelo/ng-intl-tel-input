@@ -31,7 +31,6 @@ angular.module('ngIntlTelInput')
         restrict: 'A',
         scope: {
           countryDialCode: '=',
-          localPhone: '='
         },
         require: 'ngModel',
         link: function (scope, elm, attr, ctrl) {
