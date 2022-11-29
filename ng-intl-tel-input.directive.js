@@ -50,7 +50,7 @@ angular.module('ngIntlTelInput')
           };
           // Set model value to valid, formatted version.
           ctrl.$parsers.push(function (value) {
-            scope.countryDialCode = elm.intlTelInput('getSelectedCountryData').dialCode
+            scope.countryDialCode = elm.intlTelInput('getSelectedCountryData').dialCode;
             return elm.intlTelInput('getNumber');
           });
           // Set input value to model value and trigger evaluation.
